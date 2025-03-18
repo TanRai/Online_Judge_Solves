@@ -1,0 +1,23 @@
+# Ignore compiled files
+*.class
+*.o
+*.out
+*.exe
+
+# Ignore temporary files
+*.tmp
+*.log
+*.swp
+*.swo
+*.bak
+*.old
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.iml
+
+# Ignore personal configuration files
+*.env
+
+test.cpp
