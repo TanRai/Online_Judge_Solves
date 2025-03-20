@@ -1,11 +1,3 @@
-// struct ListNode{
-//     int val;
-//     //ListNode *prev;
-//     ListNode *next;
-//     ListNode() : val(0), next(nullptr) {}
-//     ListNode(int x) : val(x), next(nullptr) {}
-//     ListNode(int x, ListNode *next) : val(x), next(next) {}
-// }
 struct Node {
   int val;
   Node *next;
