@@ -10,22 +10,25 @@
  * };
  */
 class Solution {
-  private:
-  void BFS(TreeNode* root,vector<int>& inOrder)
-  {
-      if(!root)
-          return;
-  
-      BFS(root->left,inOrder);
-      inOrder.push_back(root->val);
-      BFS(root->right,inOrder);
-  
-      return;
-  }
-  public:
-      int kthSmallest(TreeNode* root, int k) {
-          vector<int> v;
-          BFS(root,v);
-          return v[k-1];
-      }
-  };
+    void inOrder(TreeNode* root,int &k,int &ans){
+        if(!root)
+            return;
+        
+        inOrder(root->left,k,ans);
+        k--;
+        if(!k)
+        {
+            ans=root->val;
+            return;
+        }
+        inOrder(root->right,k,ans);
+    }
+    
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        int ans;
+
+        inOrder(root,k,ans);
+        return ans;
+    }
+};
