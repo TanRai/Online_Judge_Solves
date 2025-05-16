@@ -1,3 +1,29 @@
+//Memoization approach
+class Solution {
+    int solve(int n,unordered_map<int,int>& cache)
+    {
+        if(n<=2)
+            return n;
+        if(cache.count(n))
+            return cache[n];
+
+        cache[n] = solve(n-1,cache)+solve(n-2,cache);
+
+        return cache[n];
+    }
+
+public:
+    int climbStairs(int n) {
+
+        unordered_map<int,int> cache;
+
+        return solve(n,cache);
+        
+    }
+};
+
+// Dynamic Programming approach
+
 class Solution {
   public:
       int climbStairs(int n) {
